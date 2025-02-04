@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Online</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="shortcut icon" href="iconos/CalPestanaIco.png" type="image/x-icon">
+    <script src="src/main.js"></script>
+
+</head>
+<body>
+    <h1 class="title1">Calculado Básica</h1>
+    <h3 class="title2">Por Fredy Pallo</h3>
+    <input type="button"  class="btn-tema" title="Cambiar de tema" onclick="cambiarTema()">
+    <input type="button"  class="btn-temaRGB" title="Cambiar de temaRGB" onclick="cambiarRGB()">
+    <a href="#">hola</a>
+
+    <div class="calculadora">
+        <input type="text" class="pantalla" id="pantallaCal" readonly title="Pantalla de la calculadora" placeholder="0">
+        <br>
+        <div class="botones">
+        <input type="button" class="btn-numero" value="1" onclick="agregarValorPantalla('1')">
+        <input type="button" class="btn-numero" value="2" onclick="agregarValorPantalla('2')">
+        <input type="button" class="btn-numero" value="3" ondblclick="agregarValorPantalla('3')">
+        <input type="button" class="btn-operador" value="+" onclick="agregarValorPantalla('+')">
+        <input type="button" class="btn-numero" value="4" onclick="agregarValorPantalla('4')">
+        <input type="button" class="btn-numero" value="5" onclick="agregarValorPantalla('5')">
+        <input type="button" class="btn-numero" value="6" onclick="agregarValorPantalla('6')">
+        <input type="button" class="btn-operador" value="-" onclick="agregarValorPantalla('-')">
+        <input type="button" class="btn-numero" value="7" onclick="agregarValorPantalla('7')">
+        <input type="button" class="btn-numero" value="8" onclick="agregarValorPantalla('8')">
+        <input type="button" class="btn-numero" value="9" onclick="agregarValorPantalla('9')">
+        <input type="button" class="btn-operador" value="*" onclick="agregarValorPantalla('*')">
+        <input type="button" class="btn-numero" value="0" onclick="agregarValorPantalla('0')">
+        <input type="button" class="btn-numero" value="." onclick="agregarValorPantalla('.')">
+        <input type="button" class="btn-operador" value="/" onclick="agregarValorPantalla('/')">
+        <input type="button" class="btn-igual" value="=" onclick="calcularResultado()">
+        <input type="button" class="btn-limpiar" value="C" onclick="limpiarPantalla()">
+        </div>
+    </div>
+</body>
+</html>

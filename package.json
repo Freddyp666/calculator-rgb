@@ -1,0 +1,18 @@
+{
+  "name": "vite-calculadora-rgb",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "homepage": "https://freddy666.github.io/calculator-rgb/",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d ."
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "vite": "^6.0.5"
+  }
+}
