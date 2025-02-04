@@ -1,24 +1,57 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+function cambiarTema(){
+  let body=document.body;
+  let calc=document.querySelector('.calculadora');
+  if(body.style.backgroundColor=='white'){
+      body.style.backgroundColor='#131010';
+      calc.style.backgroundColor='#1A1A19';
+      calc.style.color='white';
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+  }else{
+      body.style.backgroundColor='white';
+      calc.style.backgroundColor='white';
+      calc.style.color='black';
+  }
 
-setupCounter(document.querySelector('#counter'))
+}
+
+function cambiarRGB() {
+  let r = Math.floor(Math.random() * 256);
+  let g = Math.floor(Math.random() * 256);
+  let b = Math.floor(Math.random() * 256);
+  
+  let colorRandom = `rgb(${r}, ${g}, ${b})`;
+  document.querySelector('.calculadora').style.backgroundColor = colorRandom;
+
+  // Calcular brillo basado en la luminosidad percibida
+  let luminancia = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+  
+  // Determinar color de texto (negro o blanco)
+  let colorTexto = luminancia > 128 ? 'black' : 'white';
+  document.querySelector('.calculadora').style.color = colorTexto;
+}
+
+//Agregar Valores a la pantalla
+function agregarValorPantalla(valor){
+  let mostrarPantalla=document.getElementById("pantallaCal");
+  if(mostrarPantalla){
+      mostrarPantalla.value+=valor;
+  }else{
+      console.error("No valor")
+  }
+  
+
+}
+
+//Funcion suma
+function limpiarPantalla(){
+  let borrar=document.getElementById("pantallaCal");
+  borrar.value='';
+}
+
+function calcularResultado(){
+  const valorPantalla=document.getElementById('pantallaCal').value;
+  const resultado=eval(valorPantalla)
+  document.getElementById('pantallaCal').value=resultado;
+
+
+}
