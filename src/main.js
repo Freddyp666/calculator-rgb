@@ -42,7 +42,7 @@ function agregarValorPantalla(valor){
 
 }
 
-//Funcion suma
+//Funcion limpar pantalla
 function limpiarPantalla(){
   let borrar=document.getElementById("pantallaCal");
   borrar.value='';
@@ -53,5 +53,15 @@ function calcularResultado(){
   const resultado=eval(valorPantalla)
   document.getElementById('pantallaCal').value=resultado;
 
-
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const btnTemaRGB = document.querySelector(".btn-temaRGB");
+  const botonesCalculadora = document.querySelectorAll(".btn-numero, .btn-operador, .btn-igual, .btn-limpiar");
+
+  btnTemaRGB.addEventListener("click", function () {
+      botonesCalculadora.forEach(btn => {
+          btn.classList.toggle("rgb-theme");
+      });
+  });
+});
